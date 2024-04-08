@@ -67,9 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     axios.get('http://127.0.0.1:3000/table/getTables')
         .then(res => {
             res.data.tables.forEach(table => {
+                const a = document.createElement("a");
+                a.href = `/table/${table}`;
                 li = document.createElement("li");
                 li.innerText = table;
-                tableData.appendChild(li);
+                a.appendChild(li);
+                tableData.appendChild(a);
             });
         })
         .catch(err => console.log(err));
