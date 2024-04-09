@@ -5,28 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Management App</title>
-    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="stylesheet" href="public/css/main.css">
 </head>
 
 <body>
-    <ul id="table-data">
-    </ul>
-    <form class="add-table">
-        <button class="create-table" type="submit">+ Create new table</button>
-    </form>
-    <modal class="table-info">
-        <h1>Create Table</h1>
-        <form id="create-table">
-            <label for="tableName">Table Name</label><br>
-            <input type="text" name="tableName" id="tableName"><br>
-            <label for="fieldNames">Field Name</label>
-            <div name="fieldNames" id="fieldNames">
+    <section id="sidebar">
+        <ul id="tableList"></ul>
+        <button type="button" id="create-table-dialog-btn" onclick="toggleDialog()">+ Create new table</button>
+    </section>
+    <section id="records">
+        <table>
+        </table>
+    </section>
 
+    <dialog id="create-table-dialog">
+        <div id="dialog-head">
+            <h3>Create Table</h3>
+            <button type="button" id="close-btn" onclick="toggleDialog()">X</button>
+        </div>
+        <form onsubmit="createTable(event)">
+            <div id="table-name-section">
+                <label for="tableName">Table Name:</label>
+                <input type="text" name="tableName" id="tableName" required="true">
             </div>
-            <button type="button" name="add-another" id="add-another">Add another field</button><br>
-            <button type="submit">Create Table</button>
+            <div id="table-fields-section">
+                <label>Field Name</label>
+                <label>Type</label>
+            </div>
+            <div id="new-column"></div>
+            <div id="button-section">
+                <button type="button" id="add-another-btn" onClick="addAnotherField()">Add another field</button>
+                <button type="button" id="remove-field-btn" onClick="removeField()">Remove field</button>
+                <button type="submit" id="create-table-btn">Create Table</button>
+            </div>
         </form>
-    </modal>
+    </dialog>
+
+    <dialog id="insert-record-dialog">
+        <div id="dialog-head">
+            <h3>Insert Record</h3>
+            <button type="button" id="close-btn" onclick="insertRecordDialog()">X</button>
+        </div>
+        <form id="insert-record-form">
+            <div id="new-record"></div>
+            <div id="button-section">
+                <button type="submit" id="insert-record-btn">Insert Record</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
     integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="

@@ -1,0 +1,187 @@
+/* Root */
+body {
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    margin: 0px;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    padding: 15px;
+}
+
+/* Button */
+button {
+    background-color: #0da37f;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: large;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #0da380ba;
+    cursor: pointer;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 260px;
+    background-color: #202123;
+    position: relative;
+}
+
+#create-table-dialog-btn {
+    width: -webkit-fill-available;
+    bottom: 0px;
+    position: absolute;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.table-link {
+    text-decoration: none;
+    list-style: none;
+}
+
+.table-link li {
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: 30px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.table-link li:hover {
+    border: 1px solid #0da37f;
+    color: #0da37f;
+    cursor: pointer;
+}
+
+#tableList {
+    padding: 0px;
+}
+
+/* Dialog Box */
+input {
+    border-radius: 5px;
+    font-size: large;
+}
+
+#close-btn {
+    height: min-content;
+    font-size: larger;
+    padding: 5px;
+}
+
+dialog {
+    width: 40%;
+    font-size: larger;
+    background-color: #202123;
+    color: white;
+    border: 1px solid #0da37f;
+    top: 10%;
+    border-radius: 15px;
+}
+
+#dialog-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#table-name-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tableName {
+    margin: 0px 5px;
+    font-size: larger;
+}
+
+#table-fields-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    align-items: center;
+}
+
+#button-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    padding-bottom: 0px;
+    align-items: center;
+}
+
+#new-section {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    padding: 25px;
+    padding-bottom: 0px;
+    align-items: center;
+}
+
+.newColumn {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 20px;
+}
+
+.newColumn select {
+    font-size: large;
+    border-radius: 5px;
+}
+
+#remove-field-btn {
+    background-color: #DC4C64;
+}
+
+#remove-field-btn:hover {
+    background-color: #DC4C64bf;
+}
+
+.del-btn {
+    background-color: #DC4C64;
+}
+
+.del-btn:hover {
+    background-color: #DC4C64bf;
+}
+
+/* Records Section */
+#records {
+    position: relative;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: fit-content;
+}
+
+th,
+td {
+    border: 1px solid #0da37f;
+    text-align: left;
+    padding: 8px;
+    background-color: #202123;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.505);
+}
+
+.insert-record {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 15px;
+}

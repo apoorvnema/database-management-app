@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
 
-const tableController = require('../controllers/table');
+const tableController = require("../controllers/table");
 
 const router = express.Router();
 
-router.get('/getTables', tableController.getTables);
+router.get('/get-tables', tableController.getTables);
 
-router.post('/addTable', tableController.addTable);
+router.post('/add-table', tableController.addTable);
 
 module.exports = router;
